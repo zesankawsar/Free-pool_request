@@ -1,34 +1,19 @@
-class Solution:
-   def maximumGain(self,s: str, x: int, y: int) -> int:
-      
-      if x >= y:
-         first, first_points, second, second_points = "ab", x, "ba", y
-      else:
-         first, first_points, second, second_points = "ba", y, "ab", x
-
-      
-      def remove_substrings(s: str, sub: str, points: int) -> (str, int):
-         stack = []
-         score = 0
-         for char in s:
-               if stack and stack[-1] == sub[0] and char == sub[1]:
-                  stack.pop()
-                  score += points
-               else:
-                  stack.append(char)
-         return "".join(stack), score
-
-      
-      remaining_string, score = remove_substrings(s, first, first_points)
-      
-      remaining_string, score2 = remove_substrings(remaining_string, second, second_points)
-
-      
-      return score + score2
-
-if __name__ == "__main__":
-   sltn = Solution()
-   s = "cdbcbbaaabab"
-   x = 4
-   y = 5
-   sltn.maximumGain(s, x, y)
+def smallandlargestaliment():
+list = [10, 20, 20, 4, 45, 45, 45, 99, 99]
+print("Second largest element is:", list[-2])
+list1 = [2, 3, 5, 3, 7, 2, 11, 7, 7, 210, 5]
+print("Smallest element is:", min(list))
+print("largest element is:",max(list))
+smallandlargestaliment()
+def  secondsolution():
+   pass
+def Average(lst): 
+    return sum(lst) / len(lst) 
+lst = [2, 3, 5, 3, 7, 2, 11, 7, 7, 210, 5] 
+average = Average(lst) 
+print("Average of the list =", round(average, 2)) 
+def sumoflist():
+    numbers = [2, 3, 5, 3, 7, 2, 11, 7, 7, 210, 5]
+    Sum = sum(numbers)
+    print(Sum)
+sumoflist()
